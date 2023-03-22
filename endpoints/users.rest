@@ -1,0 +1,38 @@
+@base_url = http://localhost:3000
+
+### Requests Find All
+GET {{base_url}}/users
+
+### Requests Find One
+GET {{base_url}}/users/1
+
+### Requests Create
+POST {{base_url}}/users
+content-type: application/json
+
+{
+	"name": "João Rangel",
+	"email": "jao@hcode.com.br",
+	"password": "123456"
+}
+
+### Requests Update
+PUT  {{base_url}}/users/1
+content-type: application/json
+
+{
+	"name": "João Rangel",
+	"email": "jao@hcode.com.br",
+	"password": "123456"
+}
+
+### Requests Update Partial
+PATCH {{base_url}}/users/1
+content-type: application/json
+
+{
+	"name": "João Rangel"
+}
+
+### Requests Delete
+DELETE  {{base_url}}/users/1

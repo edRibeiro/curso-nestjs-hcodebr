@@ -1,0 +1,9 @@
+@base_url = http://localhost:3000
+
+### Request 1
+
+GET {{base_url}}
+
+### Request 2
+
+POST {{base_url}}
