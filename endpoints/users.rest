@@ -22,7 +22,7 @@ content-type: application/json
 
 {
 	"name": "João Rangel",
-	"email": "jao@hcode.com.br",
+	"email": "joao@hcode.com.br",
 	"password": "123456"
 }
 
@@ -31,8 +31,9 @@ PATCH {{base_url}}/users/1
 content-type: application/json
 
 {
-	"name": "João Rangel"
+	
+	"birthAt": "1989-09-11"
 }
 
 ### Requests Delete
-DELETE  {{base_url}}/users/1
+DELETE  {{base_url}}/users/2
