@@ -1,0 +1,22 @@
+@base_url = http://localhost:3000
+
+# @name login
+POST {{base_url}}/auth/login
+content-type: application/json
+
+{
+	"email": "jao@hcode.com.br",
+	"password": "123456"
+}
+
+###
+
+@authToken = {{login.response.body.accessToken}}
+
+### Request Me
+POST {{base_url}}/auth/me
+Content-Type: application/json
+
+{
+	"token": "{{authToken}}"
+}
