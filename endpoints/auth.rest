@@ -15,8 +15,6 @@ content-type: application/json
 
 ### Request Me
 POST {{base_url}}/auth/me
+Authorization: Bearer {{authToken}}
 Content-Type: application/json
 
-{
-	"token": "{{authToken}}"
-}

@@ -1,24 +1,43 @@
 @base_url = http://localhost:3000
 
-### Requests Find All
-GET {{base_url}}/users
-
-### Requests Find One
-GET {{base_url}}/users/1
-
-### Requests Create
-POST {{base_url}}/users
+# @name login
+POST {{base_url}}/auth/login
 content-type: application/json
 
 {
-	"name": "João Rangel",
 	"email": "jao@hcode.com.br",
+	"password": "123456"
+}
+
+###
+
+@authToken = {{login.response.body.accessToken}}
+
+### Requests Find All
+GET {{base_url}}/users
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+### Requests Find One
+GET {{base_url}}/users/1
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+### Requests Create
+POST {{base_url}}/users
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+	"name": "João Rangel II",
+	"email": "jao2@hcode.com.br",
 	"password": "123456"
 }
 
 ### Requests Update
 PUT  {{base_url}}/users/1
-content-type: application/json
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
 
 {
 	"name": "João Rangel",
@@ -28,7 +47,8 @@ content-type: application/json
 
 ### Requests Update Partial
 PATCH {{base_url}}/users/1
-content-type: application/json
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
 
 {
 	
@@ -37,3 +57,5 @@ content-type: application/json
 
 ### Requests Delete
 DELETE  {{base_url}}/users/2
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
