@@ -5,7 +5,7 @@ POST {{base_url}}/auth/login
 content-type: application/json
 
 {
-	"email": "jao@hcode.com.br",
+	"email": "joao@hcode.com.br",
 	"password": "123456"
 }
 
@@ -46,13 +46,14 @@ Content-Type: application/json
 }
 
 ### Requests Update Partial
-PATCH {{base_url}}/users/1
+PATCH {{base_url}}/users/2
 Authorization: Bearer {{authToken}}
 Content-Type: application/json
 
+	# "birthAt": "1989-09-11"
 {
 	
-	"birthAt": "1989-09-11"
+	"password": "123456"
 }
 
 ### Requests Delete
