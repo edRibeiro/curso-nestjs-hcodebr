@@ -18,16 +18,11 @@ POST {{base_url}}/auth/me
 Authorization: Bearer {{authToken}}
 Content-Type: application/json
 
-### Request Me
-POST {{base_url}}/auth/photo
-Authorization: Bearer {{authToken}}
-Content-Type: multipart/form-data
+### Request 
+POST {{base_url}}/auth/forget
+content-type: application/json
 
---boundary
-Content-Disposition: form-data; name="photo"; filename="hcode.png"
-Content-Type: image/png
-
-@/c/Projects/NodeJsProjects/NestJSProjects/cursos/curso-nest-js/project-api/hcode.png
-
---boundary--
+{
+	"email": "joao@hcode.com.br"
+}
 

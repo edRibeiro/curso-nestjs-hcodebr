@@ -12,7 +12,8 @@ import { FileService } from 'src/file/file.service';
       secret: process.env.JWT_SECRET
     }),
     forwardRef(() => UserModule),
-    PrismaModule, FileService
+    PrismaModule,
+    FileService    
   ],
   controllers: [AuthController],
   providers: [AuthService, FileService],
